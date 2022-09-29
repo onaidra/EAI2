@@ -14,17 +14,12 @@
     justify-content: center;
     flex-wrap: wrap;
   }
-  
-  .show {
-     visibility: visible;
-     opacity: 100;
-  }
-  
+    
   #griglia > div{
      margin: 20px 10px;
      width: 120px;
      height: 120px;
-     background-color: #ffc83d;
+     background:url("sapienzalogo.jpg");
      border: 1px solid #3889c4;
      border-radius: 10px;
   }
@@ -49,6 +44,8 @@
   }
   
   .show {
+      visibility: visible;
+      opacity: 100;
      animation-name: rotation-icon;
      animation-duration: .5s;
      background-color:white;
