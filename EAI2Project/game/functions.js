@@ -18,10 +18,7 @@ function shuffle(a) {
     return a;
   }
   var interval;
-  
-  /*creiamo la variabile globale interval 
-  per poterla poi ripulire ogni volta che si inizia il gioco.*/
-  
+    
   function startTimer(){
     var s = 0, m = 0,  h = 0;
     interval = setInterval(function(){
@@ -66,7 +63,7 @@ function shuffle(a) {
   
     for (var i = 0; i < icons.length; i++){
       icons[i].addEventListener("click", displayIcon);
-      //icons[i].addEventListener("click", openModal);
+      icons[i].addEventListener("click", openModal);
     }
   
   }
@@ -115,7 +112,7 @@ function shuffle(a) {
   
   var modal = document.getElementById("modal");
   var timer = document.querySelector(".timer");
-  
+    
   function openModal(){  
     var iconsFind = document.getElementsByClassName("find");
     console.log(iconsFind);
@@ -123,16 +120,10 @@ function shuffle(a) {
         clearInterval(interval);
         modal.classList.add("active");
         document.getElementById("totalTime").innerHTML = timer.innerHTML;
-        closeModal();
     }
   }
   
-  function closeModal(){  
-    closeicon.addEventListener("click", function(e){
-        modal.classList.remove("active");
-        startGame();
-    });
-  }
+
   function playAgain(){
     modal.classList.remove("active");
     startGame();

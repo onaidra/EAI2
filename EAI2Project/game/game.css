@@ -19,7 +19,7 @@
      margin: 20px 10px;
      width: 120px;
      height: 120px;
-     background:url("sapienzalogo.jpg");
+     background:url("logo.jpg");
      border: 1px solid #3889c4;
      border-radius: 10px;
   }
@@ -44,8 +44,8 @@
   }
   
   .show {
-      visibility: visible;
-      opacity: 100;
+     visibility: visible;
+     opacity: 100;
      animation-name: rotation-icon;
      animation-duration: .5s;
      background-color:white;
