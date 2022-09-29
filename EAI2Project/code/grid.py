@@ -15,7 +15,7 @@ if __name__ == '__main__':
     height = args.height
     width = args.width
 
-    image = Image.open("rsz_mappagrande.jpg")
+    image = Image.open("../mappa_new.jpg")
 
     # Draw some lines
     draw = ImageDraw.Draw(image)

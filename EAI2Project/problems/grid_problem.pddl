@@ -14718,7 +14718,7 @@
         (f pos5_13)
         (f pos5_18)
         (f pos5_19)
-        (f pos5_20)
+        
         (f pos5_21)
         (f pos5_22)
         (f pos5_25)
@@ -14741,6 +14741,7 @@
         (f pos6_17)
         (f pos6_18)
         (f pos6_19)
+
         (f pos6_21)
         (f pos6_22)
         (f pos6_26)
@@ -14762,8 +14763,8 @@
         (f pos7_16)
         (f pos7_17)
         (f pos7_18)
-        (f pos7_19)
-        (f pos7_20)
+        
+        
         (f pos7_21)
         (f pos7_22)
         (f pos7_24)
@@ -14778,7 +14779,7 @@
         (f pos8_8)
         (f pos8_12)
         (f pos8_18)
-        (f pos8_19)
+        
         (f pos8_21)
         (f pos8_22)
         (f pos8_23)
@@ -15209,7 +15210,7 @@
     )
 
     
-    (:goal (and(at pos8_22)))
+    (:goal (and(at pos5_21)))
     (:metric minimize(+(total-step) (total-cost)))
     
 )
