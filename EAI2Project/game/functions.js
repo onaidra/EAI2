@@ -1,8 +1,8 @@
-var arrayAnimali  = ['🐱', '🦉', '🐾', 
-                     '🦄', '🦋', '🐛', 
-                     '🐝', '🐬', '🐱',
-                     '🦉', '🐾', '🦄', 
-                     '🦋', '🐛', '🐝','🐬'];
+var figures  = ['&#9827', '&#9829', '&#9824', 
+                     '&#9830', '&#9998', '&#10004', 
+                     '&#9650;', '&#9724', '&#9827',
+                     '&#9829', '&#9824', '&#9830', 
+                     '&#9998', '&#10004', '&#9650;','&#9724'];
 
 function shuffle(a) {
     var currentIndex = a.length;
@@ -22,7 +22,7 @@ function shuffle(a) {
   function startTimer(){
     var s = 0, m = 0,  h = 0;
     interval = setInterval(function(){
-    timer.innerHTML = 'Tempo: ' + m + " min " + s + " sec";
+    timer.innerHTML = 'Time: ' + m + " min " + s + " sec";
       s++;
       if(s == 60){
         m++;
@@ -36,10 +36,10 @@ function shuffle(a) {
   }
   function startGame(){  
 
-    var arrayShuffle = shuffle(arrayAnimali);
+    var array = shuffle(figures);
   
     clearInterval(interval);
-    arrayComparison = [];
+    compare = [];
   
     var lista = document.getElementById('griglia');
     while (lista.hasChildNodes()) {  
@@ -53,7 +53,7 @@ function shuffle(a) {
         element.id = i;
         document.getElementById('griglia')
            .appendChild(box).appendChild(element);
-        element.innerHTML = arrayShuffle[i];
+        element.innerHTML = array[i];
       }
     
     startTimer();
@@ -77,25 +77,25 @@ function shuffle(a) {
     var icons = [...icon];
   
     this.classList.toggle("show");
-    arrayComparison.push(this);
+    compare.push(this);
 
-    var len = arrayComparison.length;
+    var len = compare.length;
     if(len === 2){
-      if(arrayComparison[0].innerHTML === arrayComparison[1].innerHTML ){
-        if(arrayComparison[0].id !== arrayComparison[1].id){
+      if(compare[0].innerHTML === compare[1].innerHTML ){
+        if(compare[0].id !== compare[1].id){
 
-          arrayComparison.forEach(function(elemento){
+          compare.forEach(function(elemento){
             elemento.classList.add("find","disabled");
         });
         }
 
-        arrayComparison = [];               
+        compare = [];               
       } else {
         icons.forEach(function(item){
           item.classList.add('disabled');
         });
         setTimeout(function(){
-          arrayComparison.forEach(function(elemento){
+          compare.forEach(function(elemento){
               elemento.classList.remove("show");
           });
           icons.forEach(function(item){
@@ -104,7 +104,7 @@ function shuffle(a) {
                 iconsFind[i].classList.add("disabled");
               }
           });
-          arrayComparison = [];
+          compare = [];
         },700); 
        }
     }
@@ -115,11 +115,10 @@ function shuffle(a) {
     
   function openModal(){  
     var iconsFind = document.getElementsByClassName("find");
-    console.log(iconsFind);
     if (iconsFind.length == 16){
         clearInterval(interval);
         modal.classList.add("active");
-        document.getElementById("totalTime").innerHTML = timer.innerHTML;
+        document.getElementById("totalTime").innerHTML = timer.innerHTML.substring(6,);
     }
   }
   

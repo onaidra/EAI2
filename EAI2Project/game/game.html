@@ -6,17 +6,18 @@
         <link rel="stylesheet" href="game.css">
     </head>
     <body>
-        <div class="container icon-grid" id="griglia"></div>
+        <div class="container icon-grid" id="griglia" style="background-image: url('sapienza.jpg'); background-repeat: no-repeat;
+        background-position: center center;"></div>
         <div class="container text-center">  
-          <input type="button" id="button" class="button" onclick=startGame() value="Ricomincia">
+          <input type="button" id="button" class="button" onclick=startGame() value="Restart">
           <div class="timer">Tempo: 0 min 0 sec</div>  
         </div>
         
         <div id="modal">       
             <div class="content">
-                <h2>Congratulazioni hai risolto il gioco in </h2>
+                <h2>You solved the game in:  </h2>
                 <p><span id=totalTime> </span> </p>
-                <p><input type="button" class="button" onclick=playAgain() value="Gioca Ancora!"></p>
+                <p><input type="button" class="button" onclick=playAgain() value="Play Again!"></p>
             </div>        
          </div>
          
