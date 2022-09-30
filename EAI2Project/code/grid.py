@@ -36,7 +36,7 @@ if __name__ == '__main__':
         line = ((x_start, y), (x_end, y))
         draw.line(line, fill=128)
 
-    font = ImageFont.truetype("/usr/share/fonts/truetype/freefont/FreeSansBold.ttf", 20)
+    font = ImageFont.load_default()
     x = 0
     y = 1
     for i in range(0,image.width,step_size):
