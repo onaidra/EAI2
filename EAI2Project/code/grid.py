@@ -51,3 +51,4 @@ if __name__ == '__main__':
     del draw
 
     image.show()
+    #image.save("grid.png")
