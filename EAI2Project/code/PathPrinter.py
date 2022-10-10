@@ -31,13 +31,13 @@ with open("../plans/grid_problemnew.txt") as f:
         #cofang = (line2[1]-line1[1])/(line2[0]-line1[0])
         
         line = f.readline()
-it = 1
-for elem in lines:
+#it = 1
+""" for elem in lines:
     if(it%2 ==0):
         draw.line(elem,fill=200)
     else:
         draw.line(elem,fill=0)
-    it+=1
+    it+=1 """
 del draw
 
 image.show()
