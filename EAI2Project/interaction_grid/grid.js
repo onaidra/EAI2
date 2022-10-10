@@ -1,14 +1,26 @@
 var lastClicked;
 var selected = [];
+var find = false;
 var grid = clickableGrid(30,30,function(el,row,col,i){
-    console.log("You clicked on element:",el);
-    console.log("You clicked on row:",row);
-    console.log("You clicked on col:",col);
-    console.log("You clicked on item #:",i);
+    //console.log("You clicked on element:",el);
+    //console.log("You clicked on row:",row);
+    //console.log("You clicked on col:",col);
+    //console.log("You clicked on item #:",i);
 
     el.className='clicked';
-    if (lastClicked) lastClicked.className='';
-    lastClicked = el;
+    find = false;
+    
+    for (var k =0;k<selected.length;k++){
+        if (row==selected[k][1] && col==selected[k][2]){
+            selected[k][0].className='';
+            selected.splice(k,1);
+            console.log("hello");
+            find=true;
+        }
+    }
+    if(find==false) selected.push([el,row,col]);
+    console.log(selected);
+    //if (lastClicked) lastClicked.className='';
 });
 
 document.body.appendChild(grid);
@@ -32,11 +44,3 @@ function clickableGrid( rows, cols, callback ){
     return grid;
 }
 
-const fs = require('fs');
-
-fs.writeFile("test", "Hey there!", function(err) {
-    if(err) {
-        return console.log(err);
-    }
-    console.log("The file was saved!");
-}); 
