@@ -14,12 +14,11 @@ var grid = clickableGrid(30,30,function(el,row,col,i){
         if (row==selected[k][1] && col==selected[k][2]){
             selected[k][0].className='';
             selected.splice(k,1);
-            console.log("hello");
             find=true;
         }
     }
     if(find==false) selected.push([el,row,col]);
-    console.log(selected);
+    
     //if (lastClicked) lastClicked.className='';
 });
 
@@ -33,7 +32,7 @@ function clickableGrid( rows, cols, callback ){
         var tr = grid.appendChild(document.createElement('tr'));
         for (var c=0;c<cols;++c){
             var cell = tr.appendChild(document.createElement('td'));
-            cell.innerHTML = ++i;
+            //cell.innerHTML = ++i;
             cell.addEventListener('click',(function(el,r,c,i){
                 return function(){
                     callback(el,r,c,i);

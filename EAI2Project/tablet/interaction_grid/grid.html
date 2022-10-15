@@ -3,26 +3,11 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="grid.css">
+    <button onclick="history.back()">Go Back</button>
   </head>
-  <script src="qaws.js"></script>
+
   <body> 
     
   </body>
   <script src="grid.js"></script>
-  <script>
-
-    var ip=window.location.hostname;
-    if (ip=='')
-        ip='127.0.0.1';
-    var port = 9100;
-
-    console.log("Trying connection...")
-    wsrobot_init(ip,port);
-
-    function hello() {
-        console.log("runnig interaction...");
-        codews.send("im.robot.say('hello')\n");
-    }
-
-  </script>
 </html>
