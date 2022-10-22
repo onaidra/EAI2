@@ -2,13 +2,14 @@ var lastClicked;
 var selected = [];
 var find = false;
 var grid = clickableGrid(30,30,function(el,row,col,i){
-    //console.log("You clicked on element:",el);
-    //console.log("You clicked on row:",row);
-    //console.log("You clicked on col:",col);
-    //console.log("You clicked on item #:",i);
-
-    el.className='clicked';
-    find = false;
+    console.log("You clicked on element:",el);
+    console.log("You clicked on row:",row);
+    console.log("You clicked on col:",col);
+    console.log("You clicked on item #:",i);
+    // writing element on file:
+    let header = document.querySelector("h1");
+    header.innerHTML = row+','+col;
+    
     
     for (var k =0;k<selected.length;k++){
         if (row==selected[k][1] && col==selected[k][2]){
@@ -20,6 +21,7 @@ var grid = clickableGrid(30,30,function(el,row,col,i){
     if(find==false) selected.push([el,row,col]);
     
     //if (lastClicked) lastClicked.className='';
+    
 });
 
 document.body.appendChild(grid);
@@ -40,6 +42,8 @@ function clickableGrid( rows, cols, callback ){
             })(cell,r,c,i),false);
         }
     }
+    
     return grid;
+    
 }
 
