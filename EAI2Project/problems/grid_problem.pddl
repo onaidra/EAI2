@@ -14742,7 +14742,7 @@
         (f pos6_18)
         (f pos6_19)
 
-        (f pos6_21)
+        
         (f pos6_22)
         (f pos6_26)
         (f pos6_27)
@@ -14882,7 +14882,7 @@
         (f pos13_18)
         (f pos13_19)
         (f pos13_20)
-        (f pos13_21)
+        
         (f pos13_22)
         (f pos13_23)
         (f pos13_24)
@@ -14897,9 +14897,9 @@
         (f pos14_13)
         (f pos14_17)
         (f pos14_22)
-        (f pos14_23)
-        (f pos14_24)
-        (f pos14_25)
+        
+        
+        
         (f pos14_27)
         (f pos14_28)
         (f pos14_29)
@@ -14907,12 +14907,12 @@
         (f pos15_1)
         (f pos15_2)
         (f pos15_5)
+        (f pos15_9)
         (f pos15_13)
         (f pos15_17)
         (f pos15_22)
         (f pos15_23)
-        (f pos15_24)
-        (f pos15_25)
+
         (f pos15_27)
         (f pos15_28)
         (f pos15_29)
@@ -14928,10 +14928,10 @@
         (f pos16_10)
         (f pos16_13)
         (f pos16_17)
+        (f pos16_20)
         (f pos16_22)
         (f pos16_23)
-        (f pos16_24)
-        (f pos16_25)
+
         (f pos16_27)
         (f pos16_28)
         (f pos16_29)
@@ -14942,11 +14942,14 @@
         (f pos17_8)
         (f pos17_9)
         (f pos17_10)
+        (f pos17_12)
         (f pos17_13)
         (f pos17_14)
         (f pos17_15)
         (f pos17_16)
         (f pos17_17)
+        (f pos17_20)
+        (f pos17_21)
         (f pos17_22)
         (f pos17_23)
         (f pos17_24)
@@ -15030,6 +15033,7 @@
         (f pos21_7)
         (f pos21_8)
         (f pos21_9)
+        (f pos21_10)
         (f pos21_13)
         (f pos21_14)
         (f pos21_15)
@@ -15048,14 +15052,12 @@
         (f pos22_2)
         (f pos22_4)
         (f pos22_5)
-        (f pos22_6)
-        (f pos22_7)
         (f pos22_10)
         (f pos22_13)
         (f pos22_14)
         (f pos22_15)
         (f pos22_16)
-        (f pos22_17)
+        
         (f pos22_21)
         (f pos22_22)
         (f pos22_23)
@@ -15208,9 +15210,7 @@
         (f pos30_30)
 
     )
-
-    
-    (:goal (and(at pos5_21)))
+    (:goal (and(at pos13_24)))
     (:metric minimize(+(total-step) (total-cost)))
     
 )

@@ -1,0 +1,16 @@
+URL: index.html
+---
+PROFILE: <*,*,en,*>
+---
+IMAGE
+<*, *, *, *>:  img/sapienza.jpg
+----
+TEXT
+<*,*,it,*>: Benvenuto
+<*,*,*,*>:  Welcome
+----
+BUTTONS
+indications
+<*,*,it,*>: indicazioni
+<*,*,*,*>:  indications
+----

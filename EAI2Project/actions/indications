@@ -1,0 +1,12 @@
+IMAGE
+<*, *, *, *>:  img/sapienza.jpg
+----
+TEXT
+<*,*,it,*>: Benvenuto
+<*,*,*,*>:  Welcome
+----
+BUTTONS
+directions
+<*,*,it,*>: direzioni
+<*,*,*,*>:  directions
+----

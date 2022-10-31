@@ -1,0 +1,11 @@
+IMAGE
+<*,*,*,*>: img/tmp.jpg
+----
+TEXT
+<*,*,it,*>: 
+<*,*,*,*>: 
+----
+BUTTONS
+exit
+<*,*,*,*>: exit
+----
