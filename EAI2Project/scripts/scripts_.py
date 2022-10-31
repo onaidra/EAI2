@@ -9,11 +9,11 @@ import contextlib
 import math
 from numpy.random import choice
 
-def start_interaction(dialogue):
-    dialogue.say("Hi,I'm pepper")
+def start_interaction(speech):
+    speech.say("Hi,I'm pepper")
     gesture=Gestures()
     gesture.sayhi()
-    dialogue.say("touch my head to interact with me!.")
+    speech.say("touch my head to interact with me!.")
     return gesture.head_touch(wait_ = 10.0) 
 
 begin()
@@ -75,6 +75,7 @@ class Gestures:
 							pepper_cmd.robot.getPosture())
 
 		return pepper_cmd.robot.getPosture()
+
 class Sonar:
 
 	def __init__(self):
@@ -89,7 +90,7 @@ class Sonar:
 			try:
 				while not detected:
 					p = pepper_cmd.robot.sensorvalue()
-					detected = (0.0 < p[1] < threshold) or (0.0 < p[2] < threshold)
+					detected = (0.0 < p[1] < threshold)
 					curr_time = time.time()
 			except KeyboardInterrupt:
 				pepper_cmd.robot.stopSensorMonitor()
@@ -99,29 +100,27 @@ class Sonar:
 			print("Person approached")
 			while detected:
 				p = pepper_cmd.robot.sensorvalue()
-				detected = (0.0 < p[1] < threshold) or (0.0 < p[2] < threshold)
+				detected = (0.0 < p[1] < threshold)
 				if time.time() - curr_time >= wait_time:
 					print("Person stayed for more than {} seconds.".format(wait_time))
 					pepper_cmd.robot.stopSensorMonitor()
-					return 'front' if (0.0 < p[1] < threshold) else 'back'
+					if (0.0 < p[1] < threshold): return 'front' 
 			print("Person walked away.")
 			return self.listen(False, 1.0, 0.0, 3.0)
-class Dialogue:
+class Speech:
 
 	def __init__(self, speed=100):
 		InitRobot(speed=speed)
 
-	def say(self, sentence, require_answer=False, sleeping_time=0.0):
+	def say(self, sentence, answ=False):
 		pepper_cmd.robot.say(sentence)
-		if require_answer:
+		if answ:
 			return self.listen(timeout=30)
-		if sleeping_time:
-			time.sleep(sleeping_time)
 
 	def listen(self, vocabulary=["Play, Indication"], timeout=30):
 		answer = pepper_cmd.robot.asr(vocabulary=vocabulary, timeout=timeout)
 		while not answer:
 			answer = self.say(
-				sentence="Sorry, I didn't understand, repeat please.", require_answer=True)
+				sentence="Sorry, I didn't understand, repeat please.", answ=True)
 		return answer
 end()

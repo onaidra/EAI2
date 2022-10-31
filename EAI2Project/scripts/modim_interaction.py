@@ -44,6 +44,7 @@ class TabletInteraction():
             im.display.loadUrl('game.html')
             im.ask('ext',timeout=-1)
             im.display.loadUrl('index.html')
+            
     def i3(self):
         im.init()
         im.ask('showpath',timeout=-1)

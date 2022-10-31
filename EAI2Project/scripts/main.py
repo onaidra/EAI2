@@ -12,35 +12,35 @@ vocab = ['banca', 'fisiologia', 'botanica', 'genetica', 'medicina', 'obitorio', 
          'lettere e filosofia', 'scienze umanistiche', 'laboratori chimica', 'fisica', 'chimica', 'chimica farmaceutica', 'geologia',
          'giurisprudenza', 'matematica', 'igiene', 'zoologia', 'neurologia', 'scienze dello spettacolo', 'ortopedia']
 
-dialogue = Dialogue()
+speech = Speech()
 gesture = Gestures()
 def main_run():
     
-    interaction = start_interaction(dialogue)
+    interaction = start_interaction(speech)
     
     if (interaction):
-        dialogue.say("Do you need indications or do you want to play?")
+        speech.say("Do you need indications or do you want to play?")
         rightanswer=False
         while(not rightanswer):
-            answer = dialogue.listen()
+            answer = speech.listen()
             
             if answer == "Indications":
                 rightanswer = True
                 
-                dialogue.say("Perfect! Where do you have to go?")
-                goal = dialogue.listen(vocabulary=vocab)
+                speech.say("Perfect! Where do you have to go?")
+                goal = speech.listen(vocabulary=vocab)
                 
                 if (goal not in vocab):
                     find = False
                 
                     while(not find):
-                        dialogue.say("Sorry I didn't understand, can you repeat please?")
-                        goal = dialogue.listen(vocabulary=vocab)
+                        speech.say("Sorry I didn't understand, can you repeat please?")
+                        goal = speech.listen(vocabulary=vocab)
                 
                         if (str(goal) in vocab):
                             find=True
 
-                dialogue.say("Ok, now using the tablet press on the cells in which are obstacles, if None press the Ok button")
+                speech.say("Ok, now using the tablet press on the cells in which are obstacles, if None press the Ok button")
                 
                 #take the cell position
                 
@@ -64,7 +64,7 @@ def main_run():
                 #APRI INTERAZIONE CON MAPPA SUL TABLET
                 TabletInteraction("i1")
                 
-                dialogue.say("please wait, i'm computing the best path for you")
+                speech.say("please wait, i'm computing the best path for you")
                 
                 with open("../utils/obs.out","r") as f:
                     obs = f.readline()
@@ -83,24 +83,24 @@ def main_run():
                         f.write(line)
                     f.close()
                 
-                dialogue.say("I'm ready! Look at my tablet to see your path")
+                speech.say("I'm ready! Look at my tablet to see your path")
                 
                 TabletInteraction("i3")
                 
-                dialogue.say("I hope it helped, see you next time bye!")
+                speech.say("I hope it helped, see you next time bye!")
                 gesture.sayhi()
                 
             elif answer=="Play":
                 rightanswer = True
-                dialogue.say("Perfect! Let's play a memory game on the tablet")
+                speech.say("Perfect! Let's play a memory game on the tablet")
                 #APRI INTERAZIONE CON GIOCO SU TABLET
                 
                 TabletInteraction("i2")
                 
-                dialogue.say("I hope you had fun, see you next time bye!")
+                speech.say("I hope you had fun, see you next time bye!")
                 gesture.sayhi()
             else:
-                dialogue.say("Sorry, I didn't understand")
+                speech.say("Sorry, I didn't understand")
     return
     
 if __name__ == "__main__":
