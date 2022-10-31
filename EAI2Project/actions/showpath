@@ -1,0 +1,12 @@
+IMAGE
+<*, *, *, *>:  img/sapienza.jpg
+----
+TEXT
+<*,*,it,*>: 
+<*,*,*,*>:  Click on the button to see your path
+----
+BUTTONS
+show path
+<*,*,it,*>: show path
+<*,*,*,*>:  show path
+----

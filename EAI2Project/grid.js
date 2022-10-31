@@ -1,12 +1,14 @@
+var goalx = 24;
+var goaly = 6;
 var lastClicked;
 var selected = [];
 var find = false;
 
 var grid = clickableGrid(31,31,function(el,row,col,i){
-   /* console.log("You clicked on element:",el);
+   console.log("You clicked on element:",el);
     console.log("You clicked on row:",row);
     console.log("You clicked on col:",col);
-    console.log("You clicked on item #:",i);*/
+    console.log("You clicked on item #:",i);
     // writing element on file:
        
     find=false
@@ -24,8 +26,9 @@ var grid = clickableGrid(31,31,function(el,row,col,i){
 });
 
 var buttonvar = buttongrid();
+document.body.appendChild(buttonvar);
 document.body.appendChild(grid);
-document.body.appendChild(buttonvar)
+
 
 function buttongrid(){
     var p = document.createElement('p');
@@ -42,12 +45,17 @@ function clickableGrid( rows, cols, callback ){
         var tr = grid.appendChild(document.createElement('tr'));
         for (var c=1;c<cols;++c){
             var cell = tr.appendChild(document.createElement('td'));
-            
-            cell.addEventListener('click',(function(el,r,c,i){
-                return function(){
-                    callback(el,r,c,i);
-                }
-            })(cell,r,c,i),false);
+            if(r==parseInt(goalx) && c==parseInt(goaly)){
+                cell.style.backgroundColor = "green";
+            }
+            else{
+                cell.addEventListener('click',(function(el,r,c,i){
+                    return function(){
+                        callback(el,r,c,i);
+                    }
+                })(cell,r,c,i),false);
+            }
+
         }
     }
     

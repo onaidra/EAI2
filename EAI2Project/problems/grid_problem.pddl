@@ -15053,7 +15053,6 @@
         (f pos22_4)
         (f pos22_5)
         (f pos22_10)
-        (f pos22_13)
         (f pos22_14)
         (f pos22_15)
         (f pos22_16)
@@ -15210,7 +15209,7 @@
         (f pos30_30)
 
     )
-    (:goal (and(at pos13_24)))
+    (:goal (and(at pos24_6)))
     (:metric minimize(+(total-step) (total-cost)))
     
 )

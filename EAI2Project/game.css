@@ -19,7 +19,7 @@
      margin: 20px 10px;
      width: 120px;
      height: 120px;
-     background:url("/img/logo.jpg");
+     background:url("img/logo.jpg");
      border: 1px solid #3889c4;
      border-radius: 10px;
   }

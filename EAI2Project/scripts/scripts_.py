@@ -80,31 +80,31 @@ class Sonar:
 	def __init__(self):
 		InitRobot()
 
-	def listen(self, personHere=False, threshold=1.0, curr_time=0.0, wait_time=3.0):
+	def listen(self, detected=False, threshold=1.0, curr_time=0.0, wait_time=3.0):
 
 		pepper_cmd.robot.startSensorMonitor()
 
-		if not personHere:
-			print("Waiting people...")
+		if not detected:
+			print("Waiting approach...")
 			try:
-				while not personHere:
+				while not detected:
 					p = pepper_cmd.robot.sensorvalue()
-					personHere = (0.0 < p[1] < threshold) or (0.0 < p[2] < threshold)
+					detected = (0.0 < p[1] < threshold) or (0.0 < p[2] < threshold)
 					curr_time = time.time()
 			except KeyboardInterrupt:
 				pepper_cmd.robot.stopSensorMonitor()
 				sys.exit(0)
 			return self.listen(True, 1.0, curr_time, 3.0)
 		else:
-			print("Person approached. Measuring time...")
-			while personHere:
+			print("Person approached")
+			while detected:
 				p = pepper_cmd.robot.sensorvalue()
-				personHere = (0.0 < p[1] < threshold) or (0.0 < p[2] < threshold)
+				detected = (0.0 < p[1] < threshold) or (0.0 < p[2] < threshold)
 				if time.time() - curr_time >= wait_time:
 					print("Person stayed for more than {} seconds.".format(wait_time))
 					pepper_cmd.robot.stopSensorMonitor()
 					return 'front' if (0.0 < p[1] < threshold) else 'back'
-			print("Person approached, but then left.")
+			print("Person walked away.")
 			return self.listen(False, 1.0, 0.0, 3.0)
 class Dialogue:
 

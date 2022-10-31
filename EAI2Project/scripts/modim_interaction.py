@@ -21,7 +21,8 @@ class TabletInteraction():
         mws.setDemoPathAuto(__file__)
         if(do_=="i1"):
             mws.run_interaction(self.i1)
-        else: mws.run_interaction(self.i2)
+        elif (do_=="i2"):mws.run_interaction(self.i2)
+        else:mws.run_interaction(self.i3)
     
     def i1(self):
         im.init()
@@ -41,11 +42,15 @@ class TabletInteraction():
         a = im.ask('game',timeout= -1)
         if(a!="timeout"):
             im.display.loadUrl('game.html')
-            im.ask('quit',timeout=-1)
-            
+            im.ask('ext',timeout=-1)
+            im.display.loadUrl('index.html')
     def i3(self):
+        im.init()
+        im.ask('showpath',timeout=-1)
         im.display.loadUrl('showpath.html')
         im.ask('quit',timeout=-1)
+        im.display.loadUrl('index.html')
+        
 class Reset:
 
     def __init__(self):

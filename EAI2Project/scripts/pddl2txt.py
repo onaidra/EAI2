@@ -4,9 +4,7 @@ import argparse
 from PIL import Image, ImageDraw, ImageFont
 
 
-destinations = {"banca": "pos7_12","fisiologia umana" :"pos12_7","fisiologia generale" :"pos12_11","botanica":"pos9_18","genetica":"pos10_19","medicina legale":"pos5_22","obitorio":"pos5_22","scienze statistiche":"pos13_5","scienze solitiche":"pos15_9","ciao":"pos13_15","lettere e filosofia":"pos16_20","scienze umanistiche":"pos16_20","laboratori chimica":"pos13_24","fisica":"pos23_14",
-                "chimica":"pos23_16","chimica farmaceutica":"pos21_22","geologia":"pos18_10","giurisprudenza":"pos17_12",
-         "matematica":"pos19_22","igiene":"pos27_14","zoologia":"pos21_6","neurologia":"pos24_6","scienze dello spettacolo":"pos27_8","ortopedia":"pos27_15"}
+
 def create_problem(lista,goal):
     #os.chdir("scripts/")
     
@@ -19,11 +17,6 @@ def create_problem(lista,goal):
         goal = go.readline()
         go.close()
     """
-    #take the cell position
-    
-    for pos in destinations:
-        if (pos == goal):
-            goal = destinations[pos]
     
     #modify the pddl problem    
     if (lista!=''):

@@ -1,9 +1,9 @@
 IMAGE
-<*,*,*,*>: img/tmp.jpg
+<*,*,*,*>:
 ----
 TEXT
 <*,*,it,*>: 
-<*,*,*,*>: Here is your path
+<*,*,*,*>: 
 ----
 BUTTONS
 exit
